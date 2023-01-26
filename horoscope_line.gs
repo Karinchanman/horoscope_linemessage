@@ -1,6 +1,5 @@
-var ACCESS_TOKEN = "1KR9QQFNl2gOdvsUTEWHBVgsiS1ZX23eyC4KwHvqiOiHBCRe0K5xEA5flNAeI/f4TMKvql19ZxrNZXLL7vVZdbpNcYYje4JU6J8giPG2AOTYbQd8KJPC2LCtFuQQ/x61iRN7N6UTdn+O/q+hrYT4EQdB04t89/1O/w1cDnyilFU=";
-//var ID = '1iawmMuyeYb93wV7xSbZn172CJuVC515xhNd4bzlxTV8';
-var URL = 'https://api.line.me/v2/bot/message/reply'; // 応答メッセージ用のAPI URL
+var ACCESS_TOKEN = "xxxxxxxxxxxxxxxxxxxxx";
+var URL = "https://api.line.me/v2/bot/message/reply"; // 応答メッセージ用のAPI URL
 
 function doPost(e) {
     //JSONをパースする
@@ -16,7 +15,7 @@ function doPost(e) {
     var user_message = json.events[0].message.text;
     var post_message = "";
 
-    post_message=get_result(user_message)
+    post_message　=　get_result(user_message)
 
 
     UrlFetchApp.fetch(URL, {
@@ -44,8 +43,9 @@ function get_result(user_message) {
   const sheet = ss.getSheetByName('horoscope_result');
   var lastRow
   lastRow = sheet.getLastRow();
-  for(let i=1;i<=lastRow;i++){
-    if(horo==sheet.getRange(i,1).getValue()){
+
+  for(let i　=　1;　i　<=　lastRow;　i++){
+    if(horo　==　sheet.getRange(i,1).getValue()){
       line = sheet.getRange(i,2).getValue();
       docomo = sheet.getRange(i,3).getValue();
       asahi = sheet.getRange(i,4).getValue();
@@ -57,8 +57,8 @@ function get_result(user_message) {
 
   }
  
-  if(message==null){
-    message="正しく入力してね！（例：しし座）"
+  if(message　==　null){
+    message　=　"正しく入力してね！（例：しし座）"
   }
  
   return message;
